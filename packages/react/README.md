@@ -1,13 +1,13 @@
-# @glyph-avatars/react
+# @glyph-avatar/react
 
-React components for [glyph-avatars](https://www.npmjs.com/package/glyph-avatars): an `Avatar`, and a picker so people can choose their own.
+React components for [glyph-avatar](https://www.npmjs.com/package/glyph-avatar): an `Avatar`, and a picker so people can choose their own.
 
 ```sh
-npm install glyph-avatars @glyph-avatars/react
+npm install glyph-avatar @glyph-avatar/react
 ```
 
 ```jsx
-import { Avatar, AvatarPicker } from '@glyph-avatars/react';
+import { Avatar, AvatarPicker } from '@glyph-avatar/react';
 
 <Avatar value={user.avatar ?? user.id} size={32} />
 
@@ -19,8 +19,8 @@ import { Avatar, AvatarPicker } from '@glyph-avatars/react';
 
 The picker fills the width of its container, so you can put it on a page, in a popover or inside your own dialog. It brings its own styles. It saves a short string like `v1:xzl4n0g:mlda8xw:horizon`; store it with the user and pass it to `Avatar`.
 
-All props and options are in the [README on GitHub](https://github.com/nilbuild/glyph-avatars#readme).
+All props and options are in the [README on GitHub](https://github.com/nilbuild/glyph-avatar#readme).
 
 ## License
 
-MIT
+MIT © [Kamran Ahmed](https://kamran.fyi)

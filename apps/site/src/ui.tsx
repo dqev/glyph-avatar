@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 
-export const INSTALL = 'npm install glyph-avatars';
-export const REPO = 'https://github.com/nilbuild/glyph-avatars';
+export const INSTALL = 'npm install glyph-avatar';
+export const REPO = 'https://github.com/nilbuild/glyph-avatar';
 
 export const copyIcon = (
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">

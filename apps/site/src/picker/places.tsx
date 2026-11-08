@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { Avatar, AvatarPicker } from '@glyph-avatars/react';
+import { Avatar, AvatarPicker } from '@glyph-avatar/react';
 import { ProfileWindow, useProfile } from './profile';
 
 function Window(props: { crumb: string; children: ReactNode; tall?: boolean }) {

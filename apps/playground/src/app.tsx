@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import type { ColorMode } from 'glyph-avatars';
-import { Avatar, AvatarPicker } from '@glyph-avatars/react';
+import type { ColorMode } from 'glyph-avatar';
+import { Avatar, AvatarPicker } from '@glyph-avatar/react';
 
 const TEAM = ['Maya Chen', 'Omar Haddad', 'Lena Fischer', 'Kofi Mensah', 'Priya Raman', 'Jonas Berg'];
 
@@ -11,8 +11,8 @@ export function App() {
   return (
     <main>
       <header>
-        <h1>Glyph Avatars playground</h1>
-        <p>Runs <code>@glyph-avatars/react</code> against the core source.</p>
+        <h1>Glyph Avatar playground</h1>
+        <p>Runs <code>@glyph-avatar/react</code> against the core source.</p>
         <label>
           Colors{' '}
           <select value={colors} onChange={(e) => setColors(e.target.value as ColorMode)}>

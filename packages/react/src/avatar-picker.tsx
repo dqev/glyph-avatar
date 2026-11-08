@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { BACKGROUNDS, buildAvatar, stringifySpec, toSpec, type AvatarSpec, type ColorMode } from 'glyph-avatars';
+import { BACKGROUNDS, buildAvatar, stringifySpec, toSpec, type AvatarSpec, type ColorMode } from 'glyph-avatar';
 import { createHoneycomb, type Honeycomb } from './honeycomb';
 import { usePickerStyles } from './styles';
 

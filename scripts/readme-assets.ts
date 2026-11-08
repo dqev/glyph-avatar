@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { GLYPH_NAMES, createAvatar } from '../packages/core/src/index';
 
-const out = join(import.meta.dirname, '../.github/assets');
+const out = join(import.meta.dirname, '../.github');
 mkdirSync(out, { recursive: true });
 
 const NAMES = ['maya', 'omar', 'lena', 'kofi', 'priya', 'jonas', 'ada', 'sam', 'noor', 'theo', 'ines', 'ravi', 'mia', 'leo', 'zara', 'finn', 'aiko', 'nils', 'sofia', 'tariq'];
@@ -58,4 +58,4 @@ function shapes() {
 
 writeFileSync(join(out, 'banner.svg'), banner());
 writeFileSync(join(out, 'shapes.svg'), shapes());
-console.log('Wrote .github/assets');
+console.log('Wrote .github');

@@ -1,7 +1,7 @@
 {
-  "name": "@glyph-avatars/react",
+  "name": "@glyph-avatar/react",
   "version": "0.1.0",
-  "description": "React components for glyph-avatars: an Avatar and an avatar picker.",
+  "description": "React components for glyph-avatar: an Avatar and an avatar picker.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -33,12 +33,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nilbuild/glyph-avatars.git",
+    "url": "git+https://github.com/nilbuild/glyph-avatar.git",
     "directory": "packages/react"
   },
-  "homepage": "https://kamran.fyi/glyph-avatars",
+  "homepage": "https://kamran.fyi/glyph-avatar",
   "dependencies": {
-    "glyph-avatars": "^0.1.0"
+    "glyph-avatar": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=18"

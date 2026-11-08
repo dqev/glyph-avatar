@@ -7,6 +7,6 @@ export default defineConfig({
   clean: true,
   minify: false,
   target: 'es2020',
-  external: ['react', 'react/jsx-runtime', 'glyph-avatars'],
+  external: ['react', 'react/jsx-runtime', 'glyph-avatar'],
   banner: { js: "'use client';" },
 });

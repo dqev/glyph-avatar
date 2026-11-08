@@ -1,6 +1,6 @@
 import { useInsertionEffect } from 'react';
 
-const ID = 'glyph-avatars-picker';
+const ID = 'glyph-avatar-picker';
 
 const CSS = `
 .ga-picker {

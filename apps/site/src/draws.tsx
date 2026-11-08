@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { GLYPH_NAMES } from 'glyph-avatars';
-import { Avatar } from '@glyph-avatars/react';
+import { GLYPH_NAMES } from 'glyph-avatar';
+import { Avatar } from '@glyph-avatar/react';
 
 export function Draws() {
   const [rounds, setRounds] = useState<Record<string, number>>({});

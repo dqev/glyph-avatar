@@ -1,5 +1,5 @@
 {
-  "name": "@glyph-avatars/root",
+  "name": "@glyph-avatar/root",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -9,8 +9,8 @@
     "apps/site"
   ],
   "scripts": {
-    "build": "npm run build -w glyph-avatars && npm run build -w @glyph-avatars/react",
-    "test": "npm run test -w glyph-avatars",
+    "build": "npm run build -w glyph-avatar && npm run build -w @glyph-avatar/react",
+    "test": "npm run test -w glyph-avatar",
     "typecheck": "tsc -p packages/core && tsc -p packages/react && npm run typecheck -w playground && npm run typecheck -w site",
     "dev": "npm run dev -w playground",
     "site": "npm run dev -w site",

@@ -1,5 +1,5 @@
 {
-  "name": "glyph-avatars",
+  "name": "glyph-avatar",
   "version": "0.1.0",
   "description": "Seeded geometric SVG avatars. Give it any text and get the same avatar every time.",
   "type": "module",
@@ -34,10 +34,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nilbuild/glyph-avatars.git",
+    "url": "git+https://github.com/nilbuild/glyph-avatar.git",
     "directory": "packages/core"
   },
-  "homepage": "https://kamran.fyi/glyph-avatars",
+  "homepage": "https://kamran.fyi/glyph-avatar",
   "engines": {
     "node": ">=18"
   },

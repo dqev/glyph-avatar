@@ -1,5 +1,5 @@
 import { useEffect, type ReactNode } from 'react';
-import { avatarDataUri } from 'glyph-avatars';
+import { avatarDataUri } from 'glyph-avatar';
 import { Count } from './count';
 import { Examples } from './examples';
 import { Draws } from './draws';
@@ -22,7 +22,7 @@ export function App() {
   useEffect(() => {
     const link = document.createElement('link');
     link.rel = 'icon';
-    link.href = avatarDataUri('glyph-avatars', { size: 64 });
+    link.href = avatarDataUri('glyph-avatar', { size: 64 });
     document.head.append(link);
     return () => link.remove();
   }, []);
@@ -31,7 +31,7 @@ export function App() {
     <main>
       <Hero>
         <p className="version">v0.1.0</p>
-        <h1>glyph-avatars</h1>
+        <h1>glyph-avatar</h1>
         <p className="lede">Turn any text into an avatar. The same text always gets the same avatar.</p>
         <div className="cta">
           <CopyButton className="btn primary code" text={INSTALL} label={INSTALL} />
@@ -67,7 +67,7 @@ export function App() {
       <footer>
         <nav>
           <a href={REPO}>GitHub</a>
-          <a href="https://www.npmjs.com/package/glyph-avatars">npm</a>
+          <a href="https://www.npmjs.com/package/glyph-avatar">npm</a>
           <span>MIT</span>
         </nav>
       </footer>

@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": { "glyph-avatars": ["../core/src/index.ts"] }
+    "paths": { "glyph-avatar": ["../core/src/index.ts"] }
   },
   "include": ["src"]
 }

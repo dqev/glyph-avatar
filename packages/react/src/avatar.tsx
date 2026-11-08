@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { createAvatar, type AvatarInput, type AvatarOptions } from 'glyph-avatars';
+import { createAvatar, type AvatarInput, type AvatarOptions } from 'glyph-avatar';
 
 export interface AvatarProps extends Omit<AvatarOptions, 'size' | 'title'> {
   value: AvatarInput;

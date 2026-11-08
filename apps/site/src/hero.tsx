@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { Avatar } from '@glyph-avatars/react';
+import { Avatar } from '@glyph-avatar/react';
 
 const NAMES = ['maya', 'omar', 'lena', 'kofi', 'priya', 'jonas', 'ada', 'sam', 'noor', 'theo', 'ines', 'ravi', 'mia', 'leo', 'zara', 'finn', 'aiko', 'nils', 'sofia', 'tariq', 'eva', 'hugo', 'yara', 'kai', 'lina', 'mateo', 'ruth', 'ivan', 'nia', 'otto', 'pia', 'dev'];
 const DOMAINS = ['studio.dev', 'acme.io', 'gmail.com', 'team.so'];

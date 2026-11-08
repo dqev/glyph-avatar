@@ -4,7 +4,7 @@ import { CopyButton, copyIcon } from '../ui';
 import { PLACES } from './places';
 import './picker.css';
 
-const PICKER_CODE = `import { AvatarPicker } from '@glyph-avatars/react'
+const PICKER_CODE = `import { AvatarPicker } from '@glyph-avatar/react'
 
 <AvatarPicker
   defaultValue={user.avatar ?? user.id}
@@ -21,7 +21,7 @@ export function PickerCard() {
       <div className="pl-card-code">
         <div className="pl-card-head">
           <span className="qs-tab">profile.tsx</span>
-          <CopyButton className="btn small code" text="npm install @glyph-avatars/react" label="npm install @glyph-avatars/react" icon={copyIcon} />
+          <CopyButton className="btn small code" text="npm install @glyph-avatar/react" label="npm install @glyph-avatar/react" icon={copyIcon} />
         </div>
         <Code>{PICKER_CODE}</Code>
         <p className="pl-note">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { createAvatar } from 'glyph-avatars';
-import { Avatar } from '@glyph-avatars/react';
+import { createAvatar } from 'glyph-avatar';
+import { Avatar } from '@glyph-avatar/react';
 
 const SEED = 'maya@studio.dev';
 const preview = (svg: string) => `${svg.slice(0, 74)}…`;
@@ -15,7 +15,7 @@ export function QuickStart() {
         <span className="qs-tab">app.ts</span>
         <pre className="qs-code">
           <code>
-            <span className="k">import</span> {'{ createAvatar } '}<span className="k">from</span> <span className="s">'glyph-avatars'</span>
+            <span className="k">import</span> {'{ createAvatar } '}<span className="k">from</span> <span className="s">'glyph-avatar'</span>
             {'\n\nconst svg = createAvatar('}
             <span className="s">'</span>
             <input

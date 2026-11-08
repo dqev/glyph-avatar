@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { BACKGROUNDS, GLYPH_NAMES, type AvatarOptions } from 'glyph-avatars';
-import { Avatar } from '@glyph-avatars/react';
+import { BACKGROUNDS, GLYPH_NAMES, type AvatarOptions } from 'glyph-avatar';
+import { Avatar } from '@glyph-avatar/react';
 
 const SEED = 'maya@studio.dev';
 

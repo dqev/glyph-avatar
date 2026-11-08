@@ -1,23 +1,23 @@
-# glyph-avatars
+# glyph-avatar
 
 Turn any text into an avatar. The same text always gets the same avatar.
 
-Try it at [kamran.fyi/glyph-avatars](https://kamran.fyi/glyph-avatars).
+Try it at [kamran.fyi/glyph-avatar](https://kamran.fyi/glyph-avatar).
 
-<img src=".github/assets/banner.svg" width="100%" alt="A honeycomb of glyph avatars with the selected one ringed in the middle">
+<img src=".github/banner.svg" width="100%" alt="A honeycomb of glyph avatars with the selected one ringed in the middle">
 
 Pass in a name, an email, an ID or any other text, and get back an SVG. No dependencies, works in the browser and on the server, and comes with an avatar picker for React.
 
 ## Install
 
 ```sh
-npm install glyph-avatars
+npm install glyph-avatar
 ```
 
 ## Usage
 
 ```js
-import { createAvatar, avatarDataUri } from 'glyph-avatars';
+import { createAvatar, avatarDataUri } from 'glyph-avatar';
 
 el.innerHTML = createAvatar(user.id, { size: 40 });
 img.src = avatarDataUri(user.id);
@@ -33,12 +33,14 @@ img.src = avatarDataUri(user.id);
 
 ## React
 
+Run this to add the React components, including the avatar picker:
+
 ```sh
-npm install glyph-avatars @glyph-avatars/react
+npm install glyph-avatar @glyph-avatar/react
 ```
 
 ```jsx
-import { Avatar, AvatarPicker } from '@glyph-avatars/react';
+import { Avatar, AvatarPicker } from '@glyph-avatar/react';
 
 <Avatar value={user.avatar ?? user.id} size={32} />
 
@@ -59,8 +61,8 @@ Not using React? `createAvatar` gives you plain SVG, so you can build your own p
 
 32 shapes, 8 backgrounds and about 300 color sets, for around 3.8 million different avatars.
 
-<img src=".github/assets/shapes.svg" width="560" alt="One avatar for each of the 32 shapes">
+<img src=".github/shapes.svg" width="560" alt="One avatar for each of the 32 shapes">
 
 ## License
 
-MIT
+MIT © [Kamran Ahmed](https://kamran.fyi)

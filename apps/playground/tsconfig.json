@@ -3,10 +3,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "glyph-avatars": [
+      "glyph-avatar": [
         "../../packages/core/src/index.ts"
       ],
-      "@glyph-avatars/react": [
+      "@glyph-avatar/react": [
         "../../packages/react/src/index.ts"
       ]
     },

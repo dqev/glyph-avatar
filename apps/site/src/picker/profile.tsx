@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ChangeEvent } from 'react';
 import { createPortal } from 'react-dom';
-import { Avatar, AvatarPicker } from '@glyph-avatars/react';
+import { Avatar, AvatarPicker } from '@glyph-avatar/react';
 
 export type Step = 'idle' | 'menu' | 'dialog' | 'saved';
 type Photo = { kind: 'letter' } | { kind: 'photo'; url: string } | { kind: 'avatar'; value: string };
