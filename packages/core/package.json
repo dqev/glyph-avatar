@@ -37,7 +37,7 @@
     "url": "git+https://github.com/nilbuild/glyph-avatars.git",
     "directory": "packages/core"
   },
-  "homepage": "https://github.com/nilbuild/glyph-avatars",
+  "homepage": "https://kamran.fyi/glyph-avatars",
   "engines": {
     "node": ">=18"
   },

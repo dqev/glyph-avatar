@@ -1,22 +1,26 @@
-<img src=".github/assets/logo.svg" width="96" height="96" align="left" alt="">
+<h1 align="center">glyph-avatars</h1>
 
-# glyph-avatars
+<p align="center">Turn any text into an avatar. The same text always gets the same avatar.</p>
 
-Turn any text into an avatar. The same text always gets the same avatar.
+<p align="center">
+  <a href="https://kamran.fyi/glyph-avatars"><strong>Website</strong></a> ·
+  <a href="#usage">Usage</a> ·
+  <a href="#react">React</a> ·
+  <a href="#avatar-picker">Avatar picker</a> ·
+  <a href="#saving-what-people-pick">Saving</a>
+</p>
 
-[![npm](https://img.shields.io/badge/npm-glyph--avatars-cb3837?logo=npm&logoColor=white)](https://www.npmjs.com/package/glyph-avatars)
-[![React](https://img.shields.io/badge/react-%40glyph--avatars%2Freact-149eca?logo=react&logoColor=white)](https://www.npmjs.com/package/@glyph-avatars/react)
-[![Dependencies](https://img.shields.io/badge/dependencies-0-2ea44f)](packages/core/package.json)
-[![TypeScript](https://img.shields.io/badge/types-included-3178c6?logo=typescript&logoColor=white)](packages/core/src)
-[![License](https://img.shields.io/badge/license-MIT-6e7681)](LICENSE)
-
-<br clear="left">
+<p align="center">
+  <img src="https://img.shields.io/badge/dependencies-0-2ea44f" alt="No dependencies">
+  <img src="https://img.shields.io/badge/types-included-3178c6?logo=typescript&logoColor=white" alt="TypeScript types included">
+  <img src="https://img.shields.io/badge/license-MIT-6e7681" alt="MIT license">
+</p>
 
 <p align="center">
   <img src=".github/assets/banner.svg" width="100%" alt="A honeycomb of glyph avatars with the selected one ringed in the middle">
 </p>
 
-Pass in a name, an email, a user ID or anything else, and get back an SVG. It works in the browser and on the server, has no dependencies, and comes with an avatar picker for React.
+Pass in a name, an email, a user ID or anything else, and get back an SVG. It works in the browser and on the server, has no dependencies, and comes with an avatar picker for React. Try it on the [website](https://kamran.fyi/glyph-avatars).
 
 - **Any text works.** No accounts, uploads or storage needed. `maya@studio.dev` always draws the same avatar.
 - **Plain SVG.** Use it with React, Vue, Svelte, plain HTML, emails or image routes.

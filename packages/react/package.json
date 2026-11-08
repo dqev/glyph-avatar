@@ -36,7 +36,7 @@
     "url": "git+https://github.com/nilbuild/glyph-avatars.git",
     "directory": "packages/react"
   },
-  "homepage": "https://github.com/nilbuild/glyph-avatars",
+  "homepage": "https://kamran.fyi/glyph-avatars",
   "dependencies": {
     "glyph-avatars": "^0.1.0"
   },

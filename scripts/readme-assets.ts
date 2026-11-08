@@ -56,7 +56,6 @@ function shapes() {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${parts.join('')}</svg>`;
 }
 
-writeFileSync(join(out, 'logo.svg'), createAvatar('glyph-avatars', { size: 96 }));
 writeFileSync(join(out, 'banner.svg'), banner());
 writeFileSync(join(out, 'shapes.svg'), shapes());
 console.log('Wrote .github/assets');
