@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { avatarDataUri, type AvatarOptions } from 'glyph-avatars';
-import { Avatar } from 'glyph-avatars/react';
+import { Avatar } from '@glyph-avatars/react';
 import { Code } from './code';
 
 const TEAM = ['maya@studio.dev', 'omar@studio.dev', 'lena@studio.dev', 'kofi@studio.dev', 'priya@studio.dev', 'jonas@studio.dev'];
@@ -45,7 +45,7 @@ const EXAMPLES: Example[] = [
   {
     title: 'In React',
     note: 'Show everyone in a list.',
-    code: "import { Avatar } from 'glyph-avatars/react'\n\n{users.map((user) => (\n  <Avatar key={user.id} value={user.id} size={36} />\n))}",
+    code: "import { Avatar } from '@glyph-avatars/react'\n\n{users.map((user) => (\n  <Avatar key={user.id} value={user.id} size={36} />\n))}",
     output: (
       <div className="stack">
         {TEAM.map((email) => (

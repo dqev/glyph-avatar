@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { createAvatar } from 'glyph-avatars';
-import { Avatar } from 'glyph-avatars/react';
+import { Avatar } from '@glyph-avatars/react';
 
 const SEED = 'maya@studio.dev';
 const preview = (svg: string) => `${svg.slice(0, 74)}…`;

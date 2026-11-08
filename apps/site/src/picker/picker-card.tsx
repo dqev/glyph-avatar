@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Code } from '../code';
+import { CopyButton, copyIcon } from '../ui';
 import { PLACES } from './places';
 import './picker.css';
 
-const PICKER_CODE = `import { AvatarPicker } from 'glyph-avatars/react'
+const PICKER_CODE = `import { AvatarPicker } from '@glyph-avatars/react'
 
 <AvatarPicker
   defaultValue={user.avatar ?? user.id}
@@ -18,7 +19,10 @@ export function PickerCard() {
   return (
     <div className="panel pl-card">
       <div className="pl-card-code">
-        <span className="qs-tab">profile.tsx</span>
+        <div className="pl-card-head">
+          <span className="qs-tab">profile.tsx</span>
+          <CopyButton className="btn small code" text="npm install @glyph-avatars/react" label="npm install @glyph-avatars/react" icon={copyIcon} />
+        </div>
         <Code>{PICKER_CODE}</Code>
         <p className="pl-note">
           Not using React? <code>createAvatar</code> gives you plain SVG, so you can build your own picker on top of it.

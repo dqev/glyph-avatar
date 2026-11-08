@@ -1,5 +1,6 @@
 .panel.pl-card { width: 100%; }
 .pl-card-code { display: grid; gap: 12px; padding: 16px 20px 18px; border-bottom: 1px solid var(--line); min-width: 0; }
+.pl-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .pl-card-code pre { background: none; border: 0; padding: 0; }
 .pl-note { color: var(--tertiary); font-size: 14px; }
 .pl-note code { font: 13px/1.5 var(--mono); color: var(--secondary); }

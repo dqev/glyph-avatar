@@ -37,7 +37,7 @@ export function App() {
           <CopyButton className="btn primary code" text={INSTALL} label={INSTALL} />
           <a className="btn" href={REPO}>{githubIcon}GitHub</a>
         </div>
-        <p className="meta">8 KB · no dependencies · TypeScript · MIT</p>
+        <p className="meta">No dependencies · TypeScript · MIT</p>
       </Hero>
 
       <section className="section" data-testid="quickstart">

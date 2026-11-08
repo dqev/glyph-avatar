@@ -1,0 +1,51 @@
+{
+  "name": "@glyph-avatars/react",
+  "version": "0.1.0",
+  "description": "React components for glyph-avatars: an Avatar and an avatar picker.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "avatar",
+    "avatar-picker",
+    "react",
+    "svg",
+    "identicon",
+    "generative"
+  ],
+  "author": "Kamran Ahmed <kamranahmed.se@gmail.com> (https://kamranahmed.se)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nilbuild/glyph-avatars.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/nilbuild/glyph-avatars",
+  "dependencies": {
+    "glyph-avatars": "^0.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "react": "^19.1.0",
+    "tsup": "^8.5.0"
+  }
+}

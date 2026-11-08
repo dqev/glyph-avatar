@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: [
-      { find: /^glyph-avatars\/react$/, replacement: core('react/index.ts') },
+      { find: /^@glyph-avatars\/react$/, replacement: fileURLToPath(new URL('../../packages/react/src/index.ts', import.meta.url)) },
       { find: /^glyph-avatars$/, replacement: core('index.ts') },
     ],
   },

@@ -4,15 +4,17 @@
   "type": "module",
   "workspaces": [
     "packages/core",
+    "packages/react",
     "apps/playground",
     "apps/site"
   ],
   "scripts": {
-    "build": "npm run build -w glyph-avatars",
+    "build": "npm run build -w glyph-avatars && npm run build -w @glyph-avatars/react",
     "test": "npm run test -w glyph-avatars",
-    "typecheck": "tsc -p packages/core && npm run typecheck -w playground && npm run typecheck -w site",
+    "typecheck": "tsc -p packages/core && tsc -p packages/react && npm run typecheck -w playground && npm run typecheck -w site",
     "dev": "npm run dev -w playground",
-    "site": "npm run dev -w site"
+    "site": "npm run dev -w site",
+    "assets": "tsx scripts/readme-assets.ts"
   },
   "devDependencies": {
     "tsx": "^4.21.0",
