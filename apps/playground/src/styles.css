@@ -1,0 +1,13 @@
+:root { color-scheme: dark; font-family: system-ui, -apple-system, sans-serif; background: #0e0d12; color: #f1eff7; }
+body { margin: 0; }
+main { max-width: 980px; margin: 0 auto; padding: 40px 16px 80px; display: grid; gap: 32px; }
+header { display: grid; gap: 8px; }
+h1 { margin: 0; font-size: 32px; }
+h2 { margin: 0 0 12px; font-size: 20px; }
+p { margin: 0; color: #9d9aac; }
+code { font-family: ui-monospace, Menlo, monospace; }
+.saved { display: grid; gap: 14px; }
+.saved code { background: #17161d; padding: 8px 12px; border-radius: 8px; width: fit-content; }
+.sizes { display: flex; gap: 14px; align-items: flex-end; }
+.team { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.team li { display: flex; align-items: center; gap: 10px; }

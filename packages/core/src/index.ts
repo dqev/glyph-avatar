@@ -1,0 +1,10 @@
+export { buildAvatar, createAvatar, avatarDataUri } from './avatar';
+export type { Avatar, AvatarInput, AvatarOptions } from './avatar';
+export { stringifySpec, parseSpec, toSpec, SPEC_VERSION } from './spec';
+export type { AvatarSpec } from './spec';
+export { GLYPH_NAMES } from './glyphs';
+export type { GlyphName } from './glyphs';
+export { BACKGROUNDS } from './backdrops';
+export type { Background } from './backdrops';
+export { PALETTES } from './color';
+export type { ColorMode, Palette } from './color';

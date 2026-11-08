@@ -1,0 +1,22 @@
+{
+  "name": "@glyph-avatars/root",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/core",
+    "apps/playground",
+    "apps/site"
+  ],
+  "scripts": {
+    "build": "npm run build -w glyph-avatars",
+    "test": "npm run test -w glyph-avatars",
+    "typecheck": "tsc -p packages/core && npm run typecheck -w playground && npm run typecheck -w site",
+    "dev": "npm run dev -w playground",
+    "site": "npm run dev -w site"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "license": "MIT"
+}

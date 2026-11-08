@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "glyph-avatars": [
+        "../../packages/core/src/index.ts"
+      ],
+      "glyph-avatars/react": [
+        "../../packages/core/src/react/index.ts"
+      ]
+    },
+    "types": [
+      "vite/client"
+    ]
+  },
+  "include": [
+    "src"
+  ]
+}
