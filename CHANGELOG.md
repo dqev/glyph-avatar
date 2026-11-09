@@ -4,6 +4,8 @@ The _Unreleased_ section lists changes merged for the next release. Once it ship
 
 ## Unreleased
 
+## 0.1.0
+
 ### Added
 
 - `glyph-avatar`: `createAvatar`, `avatarDataUri` and `buildAvatar` turn any text into a seeded SVG avatar, with 32 shapes, 8 backgrounds and about 300 color sets.
