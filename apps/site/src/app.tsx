@@ -35,8 +35,7 @@ export function App() {
         <p className="lede">Turn any text into an avatar. The same text always gets the same avatar.</p>
         <div className="cta">
           <CopyButton className="btn primary code" text={INSTALL} label={INSTALL} />
-          <a className="btn" href={DOCS} target="_blank" rel="noreferrer">Docs</a>
-          <a className="btn" href={REPO} target="_blank" rel="noreferrer">{githubIcon}GitHub</a>
+          <a className="btn" href={DOCS} target="_blank" rel="noreferrer">{githubIcon}Read the docs</a>
         </div>
         <p className="meta">No dependencies · TypeScript · MIT</p>
       </Hero>

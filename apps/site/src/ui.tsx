@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 
 export const INSTALL = 'npm install glyph-avatar';
 export const REPO = 'https://github.com/nilbuild/glyph-avatar';
-export const DOCS = `${REPO}#readme`;
+export const DOCS = REPO;
 
 export function DocsLink(props: { anchor: string; children: ReactNode }) {
   const { anchor, children } = props;
