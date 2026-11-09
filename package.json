@@ -1,6 +1,5 @@
 {
   "name": "glyph-avatar-monorepo",
-  "version": "0.0.0",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -15,7 +14,7 @@
     "dev": "npm run dev -w playground",
     "site": "npm run dev -w site",
     "assets": "tsx scripts/readme-assets.ts",
-    "release": "GITHUB_TOKEN=$(gh auth token) release-it"
+    "release": "GITHUB_TOKEN=$(gh auth token) npm run release -w glyph-avatar --"
   },
   "devDependencies": {
     "release-it": "^21.1.2",

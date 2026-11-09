@@ -53,11 +53,9 @@ function fromSeed(seed: string, opts: AvatarOptions): Avatar {
   const shapeEl = (fill: string) => (square
     ? `<rect width="100" height="100" rx="${radius}" fill="${fill}"/>`
     : `<circle cx="50" cy="50" r="50" fill="${fill}"/>`);
-  const clipId = square ? `ga-sq${radius}` : 'ga-c';
-  const defs = `<defs><clipPath id="${clipId}">${shapeEl('#000')}</clipPath></defs>`;
-  const backdrop = drawBackground(r, background, palette, shapeEl, clipId);
+  const backdrop = drawBackground(r, background, palette, shapeEl, { square, radius });
   const a11y = opts.title ? ` role="img"><title>${escapeXml(opts.title)}</title>` : ' aria-hidden="true">';
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="${size}" height="${size}"${a11y}${defs}${backdrop}${body}</svg>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="${size}" height="${size}"${a11y}${backdrop}${body}</svg>`;
   return { svg, glyph, palette, background };
 }
 

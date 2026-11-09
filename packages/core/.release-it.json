@@ -1,0 +1,24 @@
+{
+  "git": {
+    "commitMessage": "${version}",
+    "tagName": "${version}",
+    "tagAnnotation": "${version}",
+    "requireBranch": "main",
+    "push": true
+  },
+  "npm": {
+    "publish": true
+  },
+  "github": {
+    "release": true,
+    "releaseName": "${version}",
+    "releaseNotes": "node ../../scripts/release/changelog.mjs notes ${version}"
+  },
+  "hooks": {
+    "before:init": ["cd ../.. && npm test && npm run typecheck"],
+    "after:bump": [
+      "node ../../scripts/release/changelog.mjs release ${version}",
+      "git add ../../CHANGELOG.md ../../package-lock.json"
+    ]
+  }
+}

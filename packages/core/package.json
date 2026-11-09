@@ -1,6 +1,6 @@
 {
   "name": "glyph-avatar",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Seeded geometric SVG avatars, plus React components and an avatar picker. Give it any text and get the same avatar every time.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -43,6 +43,8 @@
   "scripts": {
     "build": "rm -rf dist && tsup",
     "prepack": "node ../../scripts/release/package-readme.mjs",
+    "prepublishOnly": "npm run build",
+    "release": "release-it",
     "test": "vitest run"
   },
   "keywords": [
