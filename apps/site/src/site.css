@@ -72,6 +72,11 @@ main {
 .section { display: grid; justify-items: center; gap: 48px; width: 100%; }
 .sub-block { width: min(1040px, 100%); display: grid; gap: 16px; margin-top: 24px; }
 .sub-lead { color: var(--tertiary); font-size: 16px; }
+.with-docs { width: min(1040px, 100%); display: grid; gap: 16px; }
+.docs-link { justify-self: start; display: inline-flex; gap: 6px; font-size: 14px; color: var(--tertiary); text-decoration: none; transition: color 0.15s; }
+.docs-link:hover { color: var(--ink); }
+.docs-link span { transition: translate 0.15s; }
+.docs-link:hover span { translate: 2px 0; }
 .panel { width: min(960px, 100%); display: grid; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }
 
 .seg { display: inline-flex; padding: 3px; gap: 2px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }

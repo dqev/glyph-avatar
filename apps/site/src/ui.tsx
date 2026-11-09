@@ -2,6 +2,16 @@ import { useEffect, useState, type ReactNode } from 'react';
 
 export const INSTALL = 'npm install glyph-avatar';
 export const REPO = 'https://github.com/nilbuild/glyph-avatar';
+export const DOCS = `${REPO}#readme`;
+
+export function DocsLink(props: { anchor: string; children: ReactNode }) {
+  const { anchor, children } = props;
+  return (
+    <a className="docs-link" href={`${REPO}#${anchor}`} target="_blank" rel="noreferrer">
+      {children}<span aria-hidden="true">→</span>
+    </a>
+  );
+}
 
 export const copyIcon = (
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">

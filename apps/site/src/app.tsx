@@ -6,7 +6,7 @@ import { Draws } from './draws';
 import { Hero } from './hero';
 import { PickerCard } from './picker/picker-card';
 import { QuickStart } from './quickstart';
-import { CopyButton, INSTALL, REPO, githubIcon } from './ui';
+import { CopyButton, DOCS, DocsLink, INSTALL, REPO, githubIcon } from './ui';
 
 function Lead(props: { title: string; children: ReactNode }) {
   const { title, children } = props;
@@ -35,6 +35,7 @@ export function App() {
         <p className="lede">Turn any text into an avatar. The same text always gets the same avatar.</p>
         <div className="cta">
           <CopyButton className="btn primary code" text={INSTALL} label={INSTALL} />
+          <a className="btn" href={DOCS} target="_blank" rel="noreferrer">Docs</a>
           <a className="btn" href={REPO} target="_blank" rel="noreferrer">{githubIcon}GitHub</a>
         </div>
         <p className="meta">No dependencies · TypeScript · MIT</p>
@@ -46,12 +47,16 @@ export function App() {
         <div className="sub-block">
           <p className="sub-lead">Need a picker too? There’s a ready-made one for React.</p>
           <PickerCard />
+          <DocsLink anchor="avatarpicker">Every picker prop, how to style it and how to build your own</DocsLink>
         </div>
       </section>
 
       <section className="section" data-testid="usage">
         <Lead title="Examples.">Six people, one option at a time. Click one to see the code and what you get.</Lead>
-        <Examples />
+        <div className="with-docs">
+          <Examples />
+          <DocsLink anchor="options">Every option</DocsLink>
+        </div>
       </section>
 
       <section className="section" data-testid="count">
@@ -66,6 +71,7 @@ export function App() {
 
       <footer>
         <nav>
+          <a href={DOCS} target="_blank" rel="noreferrer">Docs</a>
           <a href={REPO} target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.npmjs.com/package/glyph-avatar" target="_blank" rel="noreferrer">npm</a>
           <span>MIT</span>
