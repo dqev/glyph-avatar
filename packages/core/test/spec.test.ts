@@ -50,4 +50,11 @@ describe('specs', () => {
     const stored = stringifySpec({ seed: 'maya', colors: 'curated' });
     expect(createAvatar(stored, { colors: 'generated' })).toBe(createAvatar('maya', { colors: 'curated' }));
   });
+
+  it('renders identically regardless of seed case', () => {
+    const avatar = createAvatar('USER');
+    expect(createAvatar('user')).toBe(avatar);
+    expect(createAvatar('User')).toBe(avatar);
+    expect(createAvatar('uSeR')).toBe(avatar);
+  });
 });

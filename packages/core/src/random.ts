@@ -8,8 +8,9 @@ export const pick = <T>(r: Rng, list: readonly T[]): T => list[Math.floor(r() * 
 
 export function hash(str: string): number {
   let h = 2166136261;
-  for (let i = 0; i < str.length; i++) {
-    h ^= str.charCodeAt(i);
+  const s = str.toLowerCase();
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
     h = Math.imul(h, 16777619);
   }
   return h >>> 0;
