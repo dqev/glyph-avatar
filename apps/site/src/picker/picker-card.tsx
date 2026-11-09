@@ -29,7 +29,7 @@ export function PickerCard() {
         </p>
       </div>
       <div className="pl-places">
-        <div className="tab-list" role="tablist" aria-label="Where to put it">
+        <div className="tab-list" role="tablist" aria-label="Ways to use it">
           {PLACES.map((p) => (
             <button key={p.id} type="button" role="tab" aria-selected={p.id === id} onClick={() => setId(p.id)}>{p.label}</button>
           ))}

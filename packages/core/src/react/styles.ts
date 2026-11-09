@@ -26,7 +26,7 @@ const CSS = `
   --ga-ink: #f2f0f7;
   --ga-muted: #9c99ab;
   --ga-tint: var(--ga-panel);
-  --ga-bg: color-mix(in oklab, var(--ga-panel) 88%, var(--ga-tint));
+  --ga-bg: color-mix(in oklab, var(--ga-tint) var(--ga-tint-mix, 12%), var(--ga-panel));
   --ga-soft: color-mix(in oklab, var(--ga-ink) 12%, transparent);
   background: var(--ga-bg);
   color: var(--ga-ink);

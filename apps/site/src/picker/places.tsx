@@ -1,5 +1,17 @@
 import { useState, type ReactNode } from 'react';
-import { Avatar, AvatarPicker } from 'glyph-avatar/react';
+import {
+  Avatar,
+  AvatarPicker,
+  AvatarPickerHoneycomb,
+  AvatarPickerNewBackground,
+  AvatarPickerNewColors,
+  AvatarPickerNewShape,
+  AvatarPickerPreview,
+  AvatarPickerReset,
+  AvatarPickerRoot,
+  AvatarPickerShuffle,
+  useAvatarPicker,
+} from 'glyph-avatar/react';
 import { ProfileWindow, useProfile } from './profile';
 
 function Window(props: { crumb: string; children: ReactNode; tall?: boolean }) {
@@ -120,9 +132,81 @@ export function SignUp() {
   );
 }
 
+export function Themed() {
+  const [saved, setSaved] = useState(false);
+  return (
+    <div className="pl-light">
+      <AvatarPicker
+        className="pl-themed"
+        defaultValue="maya@studio.dev"
+        onChange={() => setSaved(false)}
+        onSave={() => setSaved(true)}
+        saveLabel={saved ? 'Saved' : 'Save'}
+      />
+    </div>
+  );
+}
+
+function UseThisOne() {
+  const { value } = useAvatarPicker();
+  const [used, setUsed] = useState<string | null>(null);
+  return (
+    <button type="button" className="pl-use" onClick={() => setUsed(value)}>
+      {used === value ? 'Saved' : 'Save'}
+    </button>
+  );
+}
+
+export function Composed() {
+  return (
+    <AvatarPickerRoot defaultValue="maya@studio.dev" unstyled className="pl-parts">
+      <div className="pl-parts-side">
+        <AvatarPickerPreview size={80} />
+        <AvatarPickerShuffle>Shuffle</AvatarPickerShuffle>
+        <AvatarPickerNewShape>Shape</AvatarPickerNewShape>
+        <AvatarPickerNewColors>Colors</AvatarPickerNewColors>
+        <AvatarPickerNewBackground>Background</AvatarPickerNewBackground>
+        <AvatarPickerReset />
+        <UseThisOne />
+      </div>
+      <AvatarPickerHoneycomb />
+    </AvatarPickerRoot>
+  );
+}
+
+const THEMED_CODE = `<AvatarPicker className="my-picker" onSave={save} />
+
+.my-picker {
+  --ga-panel: #ffffff;
+  --ga-ink: #18181b;
+  --ga-muted: #71717a;
+  --ga-accent: #2563eb;
+  --ga-accent-ink: #ffffff;
+}`;
+
+const COMPOSED_CODE = `<AvatarPickerRoot defaultValue={user.id} unstyled>
+  <div className="sidebar">
+    <AvatarPickerPreview size={80} />
+    <AvatarPickerShuffle>Shuffle</AvatarPickerShuffle>
+    <AvatarPickerNewShape>Shape</AvatarPickerNewShape>
+    <AvatarPickerNewColors>Colors</AvatarPickerNewColors>
+    <AvatarPickerNewBackground>Background</AvatarPickerNewBackground>
+    <AvatarPickerReset />
+    <SaveButton />
+  </div>
+  <AvatarPickerHoneycomb />
+</AvatarPickerRoot>
+
+function SaveButton() {
+  const { value } = useAvatarPicker();
+  return <button onClick={() => save(value)}>Save</button>;
+}`;
+
 export const PLACES = [
   { id: 'dialog', label: 'In a dialog', note: 'Open it from the profile photo, inside your own dialog.', code: '<Dialog open={open}>\n  <AvatarPicker onSave={save} onCancel={close} />\n</Dialog>', View: InDialog },
   { id: 'page', label: 'On the page', note: 'Show it right in your settings, no popup.', code: '<AvatarPicker title="" onSave={save} />', View: OnPage },
   { id: 'popover', label: 'In a popover', note: 'A smaller one, right next to the photo.', code: '<Popover>\n  <AvatarPicker title="" description="" onSave={save} />\n</Popover>', View: InPopover },
   { id: 'signup', label: 'When signing up', note: 'Let people pick one as part of sign-up.', code: '<AvatarPicker saveLabel="Continue" onSave={next} />', View: SignUp },
+  { id: 'themed', label: 'In your colors', note: 'Set a few CSS variables to match your app.', code: THEMED_CODE, View: Themed },
+  { id: 'parts', label: 'Your own layout', note: 'Build it from parts, in your own markup and styles.', code: COMPOSED_CODE, View: Composed },
 ];

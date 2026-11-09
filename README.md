@@ -143,7 +143,8 @@ Set any of these CSS variables on the `className` you pass:
 
 | Variable | Default | What it changes |
 | --- | --- | --- |
-| `--ga-panel` | `#1e1d25` | Background. It's tinted a little toward the picked avatar's color. |
+| `--ga-panel` | `#1e1d25` | Background. |
+| `--ga-tint-mix` | `12%` | How much the background takes on the picked avatar's color. `0%` keeps it plain. |
 | `--ga-ink` | `#f2f0f7` | Text, icons and the ring around the picked avatar. |
 | `--ga-muted` | `#9c99ab` | Secondary text and idle icons. |
 | `--ga-accent`, `--ga-accent-ink` | `--ga-ink`, `--ga-panel` | Save button background and text. |

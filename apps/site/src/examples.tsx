@@ -74,7 +74,7 @@ const EXAMPLES: Example[] = [
     output: <Team options={{ shape: 'square', radius: 16 }} />,
   },
   {
-    title: 'One backdrop',
+    title: 'One background',
     note: 'Give everyone the same background.',
     code: "createAvatar(user.id, { background: 'solid' })",
     output: <Team options={{ background: 'solid' }} />,
