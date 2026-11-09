@@ -16,3 +16,15 @@ code { font-family: ui-monospace, Menlo, monospace; }
 .composed-side { display: grid; gap: 6px; align-content: start; justify-items: start; }
 .composed-side button { font: inherit; padding: 4px 10px; border-radius: 6px; border: 1px solid #888; background: none; color: inherit; cursor: pointer; }
 .composed-side .use { background: #ff8c26; border-color: #ff8c26; color: #000; }
+
+.shots { display: grid; gap: 40px; padding: 40px; justify-content: start; }
+.shot { width: 640px; padding: 32px; border-radius: 28px; }
+.shot.dark { background: #17161c; }
+.shot.light { background: #f4f4f5; }
+.light-picker { --ga-panel: #ffffff; --ga-ink: #18181b; --ga-muted: #71717a; --ga-accent: #2563eb; --ga-accent-ink: #ffffff; box-shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 8px 24px rgb(0 0 0 / 0.08); }
+.parts { display: grid; grid-template-columns: 136px 1fr; gap: 20px; align-items: center; color: #f1eff7; --ga-ring: #ff8c26; }
+.parts-side { display: grid; gap: 6px; justify-items: stretch; }
+.parts-side > span { justify-self: center; margin-bottom: 8px; }
+.parts-side button { font: 500 13px/1 system-ui, sans-serif; height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid #3a3844; background: none; color: inherit; cursor: pointer; }
+.parts-side button:disabled { opacity: 0.4; cursor: default; }
+.parts-side .parts-save { background: #ff8c26; border-color: #ff8c26; color: #17161c; font-weight: 600; margin-top: 6px; }

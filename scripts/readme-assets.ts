@@ -1,6 +1,6 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { GLYPH_NAMES, createAvatar } from '../packages/core/src/index';
+import { GLYPH_NAMES, createAvatar, type AvatarOptions } from '../packages/core/src/index';
 
 const out = join(import.meta.dirname, '../.github');
 mkdirSync(out, { recursive: true });
@@ -56,6 +56,58 @@ function shapes() {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${parts.join('')}</svg>`;
 }
 
+const LABEL = 'font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8b8a96" text-anchor="middle"';
+const escape = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+function strip(items: { value: string; options?: AvatarOptions; label: string }[], size: number, cell: number) {
+  const W = items.length * cell;
+  const H = size + 32;
+  const parts = items.map((item, i) => {
+    const x = i * cell + (cell - size) / 2;
+    const avatar = place(createAvatar(item.value, { ...item.options, size: 100 }), x, 0, size);
+    return `${avatar}<text x="${i * cell + cell / 2}" y="${size + 24}" ${LABEL}>${escape(item.label)}</text>`;
+  });
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${parts.join('')}</svg>`;
+}
+
+function usage() {
+  const ids = ['maya@studio.dev', 'omar@acme.io', 'lena', 'user_8231', 'kofi@team.so', 'priya'];
+  return strip(ids.map((id) => ({ value: id, label: id })), 56, 120);
+}
+
+function options() {
+  const value = 'maya@studio.dev';
+  return strip(
+    [
+      { value, label: 'default' },
+      { value, options: { shape: 'square' }, label: "shape: 'square'" },
+      { value, options: { colors: 'curated' }, label: "colors: 'curated'" },
+      { value, options: { glyph: 'flower' }, label: "glyph: 'flower'" },
+      { value, options: { background: 'ring' }, label: "background: 'ring'" },
+    ],
+    56,
+    150,
+  );
+}
+
+function sizes() {
+  const value = 'maya@studio.dev';
+  const list = [64, 40, 32, 24];
+  const gap = 24;
+  const W = list.reduce((sum, size) => sum + size, 0) + gap * (list.length - 1);
+  const H = 64 + 32;
+  let x = 0;
+  const parts = list.map((size) => {
+    const part = `${place(createAvatar(value, { size: 100 }), x, 64 - size, size)}<text x="${x + size / 2}" y="${64 + 24}" ${LABEL}>${size}</text>`;
+    x += size + gap;
+    return part;
+  });
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${parts.join('')}</svg>`;
+}
+
+writeFileSync(join(out, 'usage.svg'), usage());
+writeFileSync(join(out, 'options.svg'), options());
+writeFileSync(join(out, 'sizes.svg'), sizes());
 writeFileSync(join(out, 'banner.svg'), banner());
 writeFileSync(join(out, 'shapes.svg'), shapes());
 console.log('Wrote .github');

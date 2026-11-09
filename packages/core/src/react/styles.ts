@@ -16,6 +16,7 @@ const CSS = `
   border: var(--ga-ring-width, 2.5px) solid var(--ga-ring, var(--ga-ink, currentColor)); pointer-events: none;
   animation: ga-ring 0.24s ease-out; transition: opacity 0.24s ease-out, scale 0.24s ease-out;
 }
+.ga-hive:focus-visible .ga-cell.is-focus::after { box-shadow: 0 0 0 4px color-mix(in oklab, var(--ga-ring, var(--ga-ink, currentColor)) 28%, transparent); }
 .ga-hive.is-free .ga-cell.is-focus::after { opacity: 0; scale: 1.1; transition-duration: 0.1s; }
 .ga-hive:not(.is-free):not(.is-moving) .ga-cell:not(.is-focus):hover svg { transform: scale(1.07); }
 .ga-hive.is-shuffling .ga-cell { animation: ga-pop 0.45s cubic-bezier(0.3, 1.4, 0.5, 1) both; animation-delay: var(--ga-delay, 0ms); }
