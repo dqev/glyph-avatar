@@ -15,17 +15,19 @@
     "releaseNotes": "node scripts/release/changelog.mjs notes ${version}"
   },
   "hooks": {
-    "before:init": ["npm test", "npm run typecheck"],
+    "before:init": [
+      "npm test",
+      "npm run typecheck"
+    ],
     "after:bump": [
       "node scripts/release/set-version.mjs ${version}",
       "node scripts/release/changelog.mjs release ${version}",
       "npm install --package-lock-only --ignore-scripts",
-      "git add CHANGELOG.md package-lock.json packages/core/package.json packages/react/package.json"
+      "git add CHANGELOG.md package-lock.json packages/core/package.json"
     ],
     "before:git:release": [
       "npm run build",
-      "npm publish -w glyph-avatar",
-      "npm publish -w @glyph-avatar/react"
+      "npm publish -w glyph-avatar"
     ]
   }
 }

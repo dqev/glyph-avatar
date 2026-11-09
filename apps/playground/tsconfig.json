@@ -6,8 +6,8 @@
       "glyph-avatar": [
         "../../packages/core/src/index.ts"
       ],
-      "@glyph-avatar/react": [
-        "../../packages/react/src/index.ts"
+      "glyph-avatar/react": [
+        "../../packages/core/src/react/index.ts"
       ]
     },
     "types": [

@@ -1,18 +1,17 @@
 {
-  "name": "@glyph-avatar/root",
+  "name": "glyph-avatar-monorepo",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "workspaces": [
     "packages/core",
-    "packages/react",
     "apps/playground",
     "apps/site"
   ],
   "scripts": {
-    "build": "npm run build -w glyph-avatar && npm run build -w @glyph-avatar/react",
+    "build": "npm run build -w glyph-avatar",
     "test": "npm run test -w glyph-avatar",
-    "typecheck": "tsc -p packages/core && tsc -p packages/react && npm run typecheck -w playground && npm run typecheck -w site",
+    "typecheck": "tsc -p packages/core && npm run typecheck -w playground && npm run typecheck -w site",
     "dev": "npm run dev -w playground",
     "site": "npm run dev -w site",
     "assets": "tsx scripts/readme-assets.ts",
