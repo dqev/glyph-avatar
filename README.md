@@ -211,15 +211,13 @@ With `unstyled`, the honeycomb still works and draws its ring, but nothing else 
 
 ## Saving a picked avatar
 
-The picker gives you a short string like `v1:xzl4n0g:mlda8xw:horizon`. Store it with the user, and pass it anywhere you'd pass text:
+The picker gives you a short string like `v1:xzl4n0g:mlda8xw:horizon`. Store it with the user and pass it anywhere you'd pass text. People who haven't picked one fall back to their ID:
 
 ```js
 createAvatar(user.avatar ?? user.id);
 ```
 
-People who never pick one still get an avatar from their ID.
-
-Not using React? `stringifySpec` and `parseSpec` make and read the same strings, so you can build your own picker on top of `createAvatar`.
+Building your own picker without React? `stringifySpec` makes the same strings and `parseSpec` reads them back:
 
 ```js
 import { stringifySpec, parseSpec } from 'glyph-avatar';
