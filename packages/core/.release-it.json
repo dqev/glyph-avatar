@@ -15,9 +15,12 @@
     "releaseNotes": "node ../../scripts/release/changelog.mjs notes ${version}"
   },
   "hooks": {
-    "before:init": ["cd ../.. && npm test && npm run typecheck"],
+    "before:init": [
+      "cd ../.. && npm test && npm run typecheck"
+    ],
     "after:bump": [
       "node ../../scripts/release/changelog.mjs release ${version}",
+      "cd ../.. && npm install --package-lock-only --ignore-scripts",
       "git add ../../CHANGELOG.md ../../package-lock.json"
     ]
   }
