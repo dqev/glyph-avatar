@@ -1,5 +1,6 @@
 {
   "name": "@glyph-avatar/root",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -14,9 +15,11 @@
     "typecheck": "tsc -p packages/core && tsc -p packages/react && npm run typecheck -w playground && npm run typecheck -w site",
     "dev": "npm run dev -w playground",
     "site": "npm run dev -w site",
-    "assets": "tsx scripts/readme-assets.ts"
+    "assets": "tsx scripts/readme-assets.ts",
+    "release": "GITHUB_TOKEN=$(gh auth token) release-it"
   },
   "devDependencies": {
+    "release-it": "^21.1.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
