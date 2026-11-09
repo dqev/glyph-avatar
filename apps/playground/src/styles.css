@@ -11,3 +11,8 @@ code { font-family: ui-monospace, Menlo, monospace; }
 .sizes { display: flex; gap: 14px; align-items: flex-end; }
 .team { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .team li { display: flex; align-items: center; gap: 10px; }
+
+.composed { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 16px; border: 1px dashed #888; border-radius: 12px; --ga-ring: #ff8c26; --ga-ring-width: 3px; }
+.composed-side { display: grid; gap: 6px; align-content: start; justify-items: start; }
+.composed-side button { font: inherit; padding: 4px 10px; border-radius: 6px; border: 1px solid #888; background: none; color: inherit; cursor: pointer; }
+.composed-side .use { background: #ff8c26; border-color: #ff8c26; color: #000; }

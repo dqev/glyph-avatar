@@ -9,3 +9,4 @@ The _Unreleased_ section lists changes merged for the next release. Once it ship
 - `glyph-avatar`: `createAvatar`, `avatarDataUri` and `buildAvatar` turn any text into a seeded SVG avatar, with 32 shapes, 8 backgrounds and about 300 color sets.
 - `glyph-avatar`: `stringifySpec` and `parseSpec` save an avatar someone picked as a short string.
 - `glyph-avatar/react`: an `Avatar` component and an `AvatarPicker` with drag, swipe and arrow keys, plus buttons for a new shape, colors and background.
+- `glyph-avatar/react`: picker parts (`AvatarPickerRoot`, `AvatarPickerHoneycomb`, `AvatarPickerPreview`, the action buttons and `useAvatarPicker`) to build your own picker, CSS variables and `data-part` attributes for styling, and `Avatar` passes any other prop to its `<span>`.

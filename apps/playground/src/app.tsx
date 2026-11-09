@@ -1,6 +1,42 @@
 import { useState } from 'react';
 import type { ColorMode } from 'glyph-avatar';
-import { Avatar, AvatarPicker } from 'glyph-avatar/react';
+import {
+  Avatar,
+  AvatarPicker,
+  AvatarPickerHoneycomb,
+  AvatarPickerNewBackground,
+  AvatarPickerNewColors,
+  AvatarPickerNewShape,
+  AvatarPickerPreview,
+  AvatarPickerReset,
+  AvatarPickerRoot,
+  AvatarPickerShuffle,
+  useAvatarPicker,
+} from 'glyph-avatar/react';
+
+function UseButton(props: { onUse: (value: string) => void }) {
+  const { onUse } = props;
+  const { value } = useAvatarPicker();
+  return <button type="button" className="use" onClick={() => onUse(value)}>Use this one</button>;
+}
+
+function ComposedPicker(props: { onUse: (value: string) => void }) {
+  const { onUse } = props;
+  return (
+    <AvatarPickerRoot unstyled className="composed" data-testid="composed">
+      <div className="composed-side">
+        <AvatarPickerPreview size={88} />
+        <AvatarPickerShuffle>Shuffle all</AvatarPickerShuffle>
+        <AvatarPickerNewShape>Shape</AvatarPickerNewShape>
+        <AvatarPickerNewColors>Colors</AvatarPickerNewColors>
+        <AvatarPickerNewBackground>Background</AvatarPickerNewBackground>
+        <AvatarPickerReset />
+        <UseButton onUse={onUse} />
+      </div>
+      <AvatarPickerHoneycomb className="composed-hive" />
+    </AvatarPickerRoot>
+  );
+}
 
 const TEAM = ['Maya Chen', 'Omar Haddad', 'Lena Fischer', 'Kofi Mensah', 'Priya Raman', 'Jonas Berg'];
 
@@ -23,6 +59,11 @@ export function App() {
       </header>
 
       <AvatarPicker colors={colors} defaultValue={saved ?? undefined} onSave={setSaved} />
+
+      <section>
+        <h2>Composed from parts</h2>
+        <ComposedPicker onUse={setSaved} />
+      </section>
 
       <section>
         <h2>Saved value</h2>

@@ -90,7 +90,9 @@ React 18 or newer is needed for these. If you only import from `glyph-avatar`, R
 | `alt` | none | Text for screen readers. |
 | `className`, `style` | none | Passed to the wrapping `<span>`. |
 
-It also takes every option above except `title`, such as `shape` or `colors`.
+It also takes every option above except `title`, such as `shape` or `colors`. Any other prop, like `onClick`, `aria-*` or `data-*`, goes on the `<span>`.
+
+The colors and shapes inside are part of the SVG, so you change them with the options above rather than CSS. Everything around the avatar, like a border, a ring or a shadow, can be styled on the `<span>`.
 
 ### AvatarPicker
 
@@ -103,22 +105,91 @@ The picker fills the width of its container, so you can put it on a page, in a p
 | `defaultValue` | random | The avatar to start on. Pass the saved value, or the user's ID. |
 | `onSave` | none | Called with the value to store when they press Save. |
 | `onCancel` | none | Shows a Cancel button and calls this when it's pressed. |
-| `onChange` | none | Called with the value every time the choice changes. |
+| `onChange` | none | Called with the value every time the choice changes. Not called on the first render. |
 | `colors` | `'generated'` | `'generated'` or `'curated'`. |
 | `title` | `'Choose an avatar'` | Heading above the picker. Pass `''` to hide it. |
 | `description` | `'Drag to look around, then pick one you like.'` | Line under the heading. Pass `''` to hide it. |
 | `saveLabel` | `'Save'` | Label of the Save button. |
 | `className` | none | Added to the picker's outer element. |
 
-To match your app, set these CSS variables on the `className` you pass:
+### Styling the picker
+
+Set any of these CSS variables on the `className` you pass:
+
+| Variable | Default | What it changes |
+| --- | --- | --- |
+| `--ga-panel` | `#1e1d25` | Background. |
+| `--ga-ink` | `#f2f0f7` | Text, icons and the ring around the picked avatar. |
+| `--ga-muted` | `#9c99ab` | Secondary text and idle icons. |
+| `--ga-accent`, `--ga-accent-ink` | `--ga-ink`, `--ga-panel` | Save button background and text. |
+| `--ga-ring`, `--ga-ring-width` | `--ga-ink`, `2.5px` | The ring around the picked avatar. |
+| `--ga-radius`, `--ga-padding`, `--ga-gap` | `20px`, `20px 20px 14px`, `12px` | Corners, padding and spacing of the picker. |
+| `--ga-button-radius` | `8px` | Corners of the buttons. |
+| `--ga-title-size` | `17px` | Size of the heading. |
 
 ```css
 .my-picker {
   --ga-panel: #ffffff;
   --ga-ink: #18181b;
   --ga-muted: #71717a;
+  --ga-accent: #2563eb;
+  --ga-accent-ink: #ffffff;
 }
 ```
+
+Every part also has a `data-part` attribute (`root`, `header`, `title`, `description`, `honeycomb`, `footer`, `shuffle`, `new-shape`, `new-colors`, `new-background`, `reset`, `cancel`, `save`), so you can style any of them:
+
+```css
+.my-picker [data-part='save'] { border-radius: 999px; }
+```
+
+### Building your own picker
+
+For a different layout, put the parts together yourself. Use only the ones you need, wrap them in your own markup, and pass `unstyled` to drop the built-in look:
+
+```jsx
+import {
+  AvatarPickerRoot,
+  AvatarPickerHoneycomb,
+  AvatarPickerPreview,
+  AvatarPickerShuffle,
+  AvatarPickerNewShape,
+  AvatarPickerNewColors,
+  AvatarPickerNewBackground,
+  AvatarPickerReset,
+  useAvatarPicker,
+} from 'glyph-avatar/react';
+
+function SaveButton() {
+  const { value } = useAvatarPicker();
+  return <button onClick={() => updateUser({ avatar: value })}>Save</button>;
+}
+
+<AvatarPickerRoot defaultValue={user.avatar ?? user.id} unstyled className="my-picker">
+  <AvatarPickerPreview size={88} />
+  <AvatarPickerHoneycomb />
+  <div className="toolbar">
+    <AvatarPickerShuffle>Shuffle</AvatarPickerShuffle>
+    <AvatarPickerNewShape>Shape</AvatarPickerNewShape>
+    <AvatarPickerNewColors>Colors</AvatarPickerNewColors>
+    <AvatarPickerNewBackground>Background</AvatarPickerNewBackground>
+    <AvatarPickerReset />
+  </div>
+  <SaveButton />
+</AvatarPickerRoot>
+```
+
+| Part | What it is |
+| --- | --- |
+| `AvatarPickerRoot` | Holds the state. Takes `defaultValue`, `colors`, `onChange`, `unstyled` and any `<div>` prop. Put every other part inside it. |
+| `AvatarPickerHoneycomb` | The draggable honeycomb. Sets its own height from its width. |
+| `AvatarPickerPreview` | The picked avatar. Takes the same props as `Avatar`, without `value`. |
+| `AvatarPickerShuffle`, `AvatarPickerNewShape`, `AvatarPickerNewColors`, `AvatarPickerNewBackground` | Buttons. They show an icon unless you give them children, and take any `<button>` prop. |
+| `AvatarPickerReset` | Goes back to the avatar picked in the honeycomb. Disabled until something changes. The built-in picker hides it while it's disabled. |
+
+`useAvatarPicker()` works anywhere inside `AvatarPickerRoot`. It returns `value`, `changed`, and `shuffle`, `newShape`, `newColors`, `newBackground` and `reset`, for your own buttons.
+
+With `unstyled`, the honeycomb still works and draws its ring, but nothing else is styled. The ring uses `--ga-ring`, then falls back to the text color.
 
 ## Saving a picked avatar
 
