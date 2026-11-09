@@ -35,7 +35,7 @@ export function App() {
         <p className="lede">Turn any text into an avatar. The same text always gets the same avatar.</p>
         <div className="cta">
           <CopyButton className="btn primary code" text={INSTALL} label={INSTALL} />
-          <a className="btn" href={REPO}>{githubIcon}GitHub</a>
+          <a className="btn" href={REPO} target="_blank" rel="noreferrer">{githubIcon}GitHub</a>
         </div>
         <p className="meta">No dependencies · TypeScript · MIT</p>
       </Hero>
@@ -66,8 +66,8 @@ export function App() {
 
       <footer>
         <nav>
-          <a href={REPO}>GitHub</a>
-          <a href="https://www.npmjs.com/package/glyph-avatar">npm</a>
+          <a href={REPO} target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.npmjs.com/package/glyph-avatar" target="_blank" rel="noreferrer">npm</a>
           <span>MIT</span>
         </nav>
       </footer>
