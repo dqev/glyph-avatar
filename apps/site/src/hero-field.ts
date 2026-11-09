@@ -66,7 +66,7 @@ export function createField(el: HTMLElement, shape: FieldShape) {
           el.append(node);
           nodes.set(key, node);
         }
-        const size = S * (0.9 - 0.56 * d);
+        const size = S * (0.93 - 0.38 * d);
         node.style.width = `${size}px`;
         node.style.height = `${size}px`;
         node.style.translate = `${(x - size / 2).toFixed(1)}px ${(y - size / 2).toFixed(1)}px`;

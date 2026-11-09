@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { createField, type FieldShape } from './hero-field';
 
 const QUERY = '(max-width: 760px)';
-const WIDE: FieldShape = { spacing: 74, anchor: 'right' };
-const NARROW: FieldShape = { spacing: 56, anchor: 'top' };
+const WIDE: FieldShape = { spacing: 78, anchor: 'right' };
+const NARROW: FieldShape = { spacing: 58, anchor: 'top' };
 
 function useNarrow() {
   const [narrow, setNarrow] = useState(() => window.matchMedia(QUERY).matches);
