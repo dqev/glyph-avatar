@@ -71,12 +71,12 @@ function strip(items: { value: string; options?: AvatarOptions; label: string }[
 }
 
 function usage() {
-  const ids = ['maya@studio.dev', 'omar@acme.io', 'lena', 'user_8231', 'kofi@team.so', 'priya'];
+  const ids = ['maya@notemap.com', 'omar@acme.io', 'lena', 'user_8231', 'kofi@team.so', 'priya'];
   return strip(ids.map((id) => ({ value: id, label: id })), 56, 120);
 }
 
 function options() {
-  const value = 'maya@studio.dev';
+  const value = 'maya@notemap.com';
   return strip(
     [
       { value, label: 'default' },
@@ -91,7 +91,7 @@ function options() {
 }
 
 function sizes() {
-  const value = 'maya@studio.dev';
+  const value = 'maya@notemap.com';
   const list = [64, 40, 32, 24];
   const gap = 24;
   const W = list.reduce((sum, size) => sum + size, 0) + gap * (list.length - 1);

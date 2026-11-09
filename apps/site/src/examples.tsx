@@ -3,7 +3,7 @@ import { avatarDataUri, type AvatarOptions } from 'glyph-avatar';
 import { Avatar } from 'glyph-avatar/react';
 import { Code } from './code';
 
-const TEAM = ['maya@studio.dev', 'omar@studio.dev', 'lena@studio.dev', 'kofi@studio.dev', 'priya@studio.dev', 'jonas@studio.dev'];
+const TEAM = ['maya@notemap.com', 'omar@notemap.com', 'lena@notemap.com', 'kofi@notemap.com', 'priya@notemap.com', 'jonas@notemap.com'];
 
 const BRAND = { name: 'brand', bg: '#ff8c26', fg: '#1c0f04' };
 

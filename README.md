@@ -19,8 +19,8 @@ npm install glyph-avatar
 ```js
 import { createAvatar, avatarDataUri } from 'glyph-avatar';
 
-el.innerHTML = createAvatar('maya@studio.dev');
-img.src = avatarDataUri('maya@studio.dev');
+el.innerHTML = createAvatar('maya@notemap.com');
+img.src = avatarDataUri('maya@notemap.com');
 ```
 
 <img src=".github/usage.svg" width="720" alt="Six different avatars, one for each of six emails and IDs">
@@ -32,10 +32,10 @@ img.src = avatarDataUri('maya@studio.dev');
 Both take the same options as a second argument.
 
 ```js
-createAvatar('maya@studio.dev', { shape: 'square' });
-createAvatar('maya@studio.dev', { colors: 'curated' });
-createAvatar('maya@studio.dev', { glyph: 'flower' });
-createAvatar('maya@studio.dev', { background: 'ring' });
+createAvatar('maya@notemap.com', { shape: 'square' });
+createAvatar('maya@notemap.com', { colors: 'curated' });
+createAvatar('maya@notemap.com', { glyph: 'flower' });
+createAvatar('maya@notemap.com', { background: 'ring' });
 ```
 
 <img src=".github/options.svg" width="750" alt="The same avatar as drawn by default, then with a square shape, curated colors, the flower glyph and the ring background">
@@ -74,10 +74,10 @@ The React components come with the same package. They need React 18 or newer. If
 ```jsx
 import { Avatar } from 'glyph-avatar/react';
 
-<Avatar value="maya@studio.dev" size={64} />
-<Avatar value="maya@studio.dev" size={40} />
-<Avatar value="maya@studio.dev" size={32} />
-<Avatar value="maya@studio.dev" size={24} />
+<Avatar value="maya@notemap.com" size={64} />
+<Avatar value="maya@notemap.com" size={40} />
+<Avatar value="maya@notemap.com" size={32} />
+<Avatar value="maya@notemap.com" size={24} />
 ```
 
 <img src=".github/sizes.svg" width="232" alt="The same avatar at 64, 40, 32 and 24 pixels">

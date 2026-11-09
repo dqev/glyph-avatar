@@ -140,7 +140,7 @@ export function ProfileWindow(props: { profile: Profile; hint?: boolean }) {
         </div>
         <div className="pd-row">
           <div className="pd-label"><b>Email</b></div>
-          <span className="pd-field">maya@studio.dev</span>
+          <span className="pd-field">maya@notemap.com</span>
         </div>
       </div>
       <div className={toast ? 'pd-toast on' : 'pd-toast'} role="status">Profile photo updated</div>
@@ -169,7 +169,7 @@ function ChooseDialog(props: { profile: Profile }) {
         <AvatarPicker
           className="stage"
           description="Use one of these instead of a photo."
-          defaultValue={photo.kind === 'avatar' ? photo.value : 'maya@studio.dev'}
+          defaultValue={photo.kind === 'avatar' ? photo.value : 'maya@notemap.com'}
           onCancel={profile.cancel}
           onSave={profile.save}
         />

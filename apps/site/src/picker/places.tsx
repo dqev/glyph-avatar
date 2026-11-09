@@ -30,7 +30,7 @@ export function InDialog() {
 }
 
 export function OnPage() {
-  const [value, setValue] = useState('maya@studio.dev');
+  const [value, setValue] = useState('maya@notemap.com');
   const [open, setOpen] = useState(true);
   return (
     <Window crumb="Profile">
@@ -67,7 +67,7 @@ export function OnPage() {
 }
 
 export function InPopover() {
-  const [value, setValue] = useState('maya@studio.dev');
+  const [value, setValue] = useState('maya@notemap.com');
   const [open, setOpen] = useState(true);
   return (
     <Window crumb="Profile" tall>
@@ -100,7 +100,7 @@ export function InPopover() {
         </div>
         <div className="pd-row">
           <div className="pd-label"><b>Email</b></div>
-          <span className="pd-field">maya@studio.dev</span>
+          <span className="pd-field">maya@notemap.com</span>
         </div>
       </div>
     </Window>
@@ -125,7 +125,7 @@ export function SignUp() {
             <h4>Pick an avatar</h4>
             <p>Step 2 of 3. You can change it later.</p>
           </div>
-          <AvatarPicker className="pl-flat" title="" description="" defaultValue="maya@studio.dev" saveLabel="Continue" onSave={setDone} />
+          <AvatarPicker className="pl-flat" title="" description="" defaultValue="maya@notemap.com" saveLabel="Continue" onSave={setDone} />
         </>
       )}
     </div>
@@ -138,7 +138,7 @@ export function Themed() {
     <div className="pl-light">
       <AvatarPicker
         className="pl-themed"
-        defaultValue="maya@studio.dev"
+        defaultValue="maya@notemap.com"
         onChange={() => setSaved(false)}
         onSave={() => setSaved(true)}
         saveLabel={saved ? 'Saved' : 'Save'}
@@ -159,7 +159,7 @@ function UseThisOne() {
 
 export function Composed() {
   return (
-    <AvatarPickerRoot defaultValue="maya@studio.dev" unstyled className="pl-parts">
+    <AvatarPickerRoot defaultValue="maya@notemap.com" unstyled className="pl-parts">
       <div className="pl-parts-side">
         <AvatarPickerPreview size={80} />
         <AvatarPickerShuffle>Shuffle</AvatarPickerShuffle>
